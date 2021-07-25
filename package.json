@@ -3,14 +3,30 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Somnams/WorldTimeClock.git",
+  "author": "Somnams <3244345132@qq.com>",
   "license": "MIT",
-  "scripts": {
-    "dev": "webpack -w -c webpack.config.js"
-  },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.8",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "node-sass": "^6.0.1",
     "style-loader": "^3.2.1",
+    "url-loader": "^4.1.1",
     "webpack": "^5.46.0",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass-loader": "^12.1.0"
+  },
+  "scripts": {
+    "dev": "webpack serve -c webpack.config.js"
   }
 }

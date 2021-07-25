@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.user {
+    &-avatar {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+}

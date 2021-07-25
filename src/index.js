@@ -1,6 +1,7 @@
-import './index.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
 const root = document.getElementById('root');
-const temp = document.createElement('h2');
-temp.innerHTML = 'Hello World';
-root.appendChild(temp);
+
+ReactDOM.render(React.createElement(App), root);
