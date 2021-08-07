@@ -1,0 +1,21 @@
+.clock-item {
+    width: 350px;
+    font-size: 18px;
+    line-height: 36px;
+    position: relative;
+
+    &-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        color: #666;
+        cursor: pointer;
+    }
+
+    &-close:hover {
+        color: #333;
+        transform: scale(1.2);
+    }
+}

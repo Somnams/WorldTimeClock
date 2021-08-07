@@ -15,15 +15,22 @@ module.exports = {
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
         mainFields: ['style', 'main'],
+        alias: {
+            '@/': src(),
+            '@/common': src('common'),
+            '@/comoponents': src('comoponents'),
+            '@/containers': src('containers'),
+        }
     },
-    entry: src('index.js'),
+    entry: src('index.ts'),
     output: {
         path: DIST_PATH,
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [{
-            test: /\.jsx?$/,
+            test: /\.[tj]sx?$/,
             use: 'babel-loader'
         }, {
             test: /\.s[ac]ss$/,
@@ -31,11 +38,14 @@ module.exports = {
         }, {
             test: /\.jpg$/,
             use: 'url-loader'
+        }, {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: src('index.html'),
+            template: src('asserts', 'index.html'),
             filename: 'index.html'
         })
     ],
@@ -43,6 +53,8 @@ module.exports = {
         contentBase: DIST_PATH,
         hot: true,
         port: 3000,
-        compress: true
+        compress: true,
+        open: true,
+        historyApiFallback: true
     }
 };
